@@ -1,0 +1,6 @@
+{:host-name "host name here"
+ :db-spec {:classname "driver here"
+           :subprotocol "protocol here"
+           :subname "connection string here"
+           :user "db username here"
+           :password "db password here"}}

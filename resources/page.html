@@ -1,0 +1,66 @@
+<div id="middle">
+    <div id="main-column">
+        <div id="main-entry">
+            <h1>Article Title Goes Here</h1>
+            <span id="host"><a href="">hostname.com</a></span>
+            <span id="separator"> | </span>
+            <span id="by"> by </span>
+            <span id="author">Author Name</span>
+            <span id="on"> on </span>
+            <span id="pub_date">August 28, 2012</span>
+            <div id="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis nisl est, sit amet tincidunt massa. Aenean dui justo, lobortis sed eleifend sit amet, euismod eu quam. Sed fringilla ultricies condimentum. Sed gravida nisl sed orci interdum euismod. Proin vitae erat ante. Praesent mollis nisi non elit fermentum vitae pellentesque orci pharetra. Maecenas quam felis, scelerisque eget placerat ac, scelerisque non dui. Morbi elementum luctus ligula vel volutpat. Morbi nibh libero, faucibus ac elementum dictum, blandit egestas erat. Donec ultrices euismod lectus sit amet scelerisque. Aenean fringilla viverra purus, id consectetur turpis dapibus vitae. Sed semper arcu id elit mollis a blandit eros tincidunt. Donec cursus tempor sem sed dapibus. Vestibulum scelerisque, ipsum at bibendum porta, elit erat sagittis leo, sed interdum mi erat eu nisl.
+            </div>
+            <div id="full-text"><b>Full Text:</b> <a id="source_link" href=""></a></div>
+        </div>
+        <div id="comments">
+            <h3 id="responses">Responses</h3>
+            <div class="comment">
+                <span class="comment-author"></span><span>&nbsp;&nbsp;</span><span class="comment-date"></span>
+                <div class="comment-body"></div>
+            </div>
+        </div>
+        <div id="comment-form-div">
+            <h3>Leave A Reply:</h3>
+            <form id="comment-form" name="comment" action="/page" method="post">
+                <div id="comment-error"></div>
+                <div><textarea id="comment_box" rows="12" cols="60" name="content"></textarea></div>
+                <input type="hidden" id="page_id" name="page_id" value=""/>
+                <a name="comment-anchor"></a>
+                <div id="user-fields">
+                    <div id="comment-instructions">
+                        Fill in your details below to register and comment in one step...</div>
+                    <div id="username-error"></div>
+                    <p><label for="username">Choose your username: </label>
+                        <input id="username" name="username" type="text" /></p>
+                    <!--
+                    <div id="email-error"></div>
+                    <p><label for="email">Email:</label>
+                    <input id="email" name="email" type="text" /></p>
+                    -->
+                    <div id="password-error"></div>
+                    <p><label for="pass">Create password: </label>
+                        <input id="pass" name="pass" type="password" /></p>
+
+                    <p><label for="pass2">Confirm password: </label>
+                        <input id="pass2" name="pass2" type="password" /></p>
+
+                    <div id="spam-error"></div>
+                    <p><label for="spam">Prove you're not a robot: what color is the sky? </label>
+                        <input id="spam" name="spam" type="text" /></p>
+
+                    <p><input type="checkbox" name="remember" value="remember" checked="checked" /> Stay signed in</p>
+                </div>
+                <input type="submit" id="submit-comment" value="Post Comment" />
+            </form>
+        </div>
+    </div>
+    <div id="sidebar">
+        <div id="related">
+            <h3>Related articles:</h3>
+            <ul id="related-list">
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

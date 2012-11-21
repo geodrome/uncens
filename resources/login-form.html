@@ -1,0 +1,18 @@
+<form id="login-form" action="/login" method="post">
+    <h3>Sign In:</h3>
+    <div id="login_form_error"></div>
+
+    <p class="form-input"><label for="username">Username: </label><br>
+    <input id="username" name="username" type="text" /></p>
+
+    <p class="form-input"><label for="pass">Password: </label><br>
+    <input id="pass" name="pass" type="password" /></p>
+
+    <p class="form-input"><input type="submit" id="submit-sign-in" value="Sign In" />
+
+        <input type="checkbox" name="remember" value="remember" checked="checked" /> Stay signed in </p>
+    <input type="hidden" name="return-url" id="return-url" value="" />
+    <!--&nbsp; <a id="register_link" href="/register">register</a>
+    &nbsp;<a href="#" onClick="MyWindow=window.open('/user/add','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=600'); return false;">register</a>
+    -->
+</form>
