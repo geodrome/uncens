@@ -126,13 +126,11 @@
   (let [comments (comment/get-comments id)
         host (. (java.net.URL. url) getHost)
         rh (page/get-by-host host 10 id)]
-    (println "title: " title "\npage:" page "\nrh:" rh "\ncomments:" comments)
     (main-layout title (page-snippet page host rh comments))))
 
 (defpage "/page/:code" {:keys [code]}
   (if-let [page (page/get-by-code code)]
-    (do ;(println "inf: " page)
-      (display-page page))
+    (display-page page)
     {:status 404 :body "Sorry, this page does not exist."}))
 
 ;; Comment
@@ -277,7 +275,7 @@
         (resp/redirect (str host-name "page/" (page/url->code url)))))))
 
 (defpage "/retain" {:keys [url]}
-  (if (.isValid (UrlValidator. (into-array ["http" "https"]) UrlValidator/ALLOW_LOCAL_URLS) url)
+  (if (.isValid (UrlValidator. (into-array ["http" "https"])) url)
     (handle-url url)
     (do
       (println "error")
@@ -301,9 +299,13 @@
      [:div {:id "header-home"}
       [:span {:id "un"} "Un"] [:span {:id "cens"} "Cens"] " - speak your mind."]
      [:div {:class "center"}
+      (when (= host-name "http://uncens-dev.elasticbeanstalk.com/")
+        [:div "DEVELOPMENT"])
       [:div {:class "text"}
-       [:p "Many sites delete \"undesirable\" comments. UnCens is a place to comment without censorship..."]]
-      (image "/img/censorship.jpg")
+       (image "/img/censorship.jpg")
+       [:p "Many sites delete \"undesirable\" comments. UnCens is a place to comment without censorship."]
+       [:p [:a {:href "javascript:document.title='(Uncensoring...)%20'+document.title;document.location%20=%20'http://uncens.com/retain?url='+document.location;"} [:b "UnCensor"]]
+        " ← Drag this to your Bookmarks Bar. Click it when you're on a page that you want to uncensor. Or..."]]
       (form-to [:post "/retain"]
         [:div "&nbsp;"]
         (when-let [e (ses/flash-get :url-error)]
@@ -313,7 +315,11 @@
         (text-field {:class "text" :size 60} "url")
         [:div "&nbsp;"]
         [:span " "]
-        (submit-button {:id "submit-uncensor"} "Uncensor!"))]]))
+        (submit-button {:id "submit-uncensor"} "Uncensor!"))
+      [:br]
+      [:hr]
+      [:h3 "Problems?"]
+      [:p "UnCens is beta software and likely has bugs. Please report any issues and offer suggestions in the" [:a {:href "https://groups.google.com/forum/?fromgroups=#!forum/uncens-support-group"} " UnCens Google Group."]]]]))
 
 (defpage [:head "/"] [] "") ; for beanstalk heartbeat
 
