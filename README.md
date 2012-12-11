@@ -1,0 +1,3 @@
+Many sites delete "undesirable" comments. UnCens is a place to comment without censorship. Go to uncens.com and enter the url of a web article that you'd like to uncensor to see it live.
+
+You enter the url that you want to uncensor, UnCens takes an excerpt with a link to the original, and then anyone can comment. Each page only gets uncensored once and all the comments get posted on that uncensored page. So if you try to uncensor a page that has previously been uncensored and commented on, you will be taken to the one and only uncensored copy of that page.
